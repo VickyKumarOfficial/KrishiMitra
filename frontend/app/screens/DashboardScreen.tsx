@@ -7,12 +7,14 @@ import {
   TouchableOpacity,
   RefreshControl,
   Alert,
-  Modal,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import AIChatModal from './AIChatModal';
 import DiseaseDetectionModal from './DiseaseDetectionModal';
+import CropRecommendationsScreen from './CropRecommendationsScreen';
+import MarketPricesScreen from './MarketPricesScreen';
+import InsightsScreen from './InsightsScreen';
 
 // Mock data
 const mockDashboardData = {
