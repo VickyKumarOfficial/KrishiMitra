@@ -503,6 +503,207 @@ const styles = StyleSheet.create({
   // Card Styles
   card: {
     backgroundColor: '#FFFFFF',
+  // Weather Card Styles
+  weatherContent: {
+    alignItems: 'center',
+  },
+  temperature: {
+    fontSize: 42,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
+  },
+  weatherCondition: {
+    fontSize: 14,
+    color: '#C8E6C9',
+    marginBottom: 12,
+  },
+  weatherDetails: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    width: '100%',
+  },
+  weatherDetailItem: {
+    alignItems: 'center',
+  },
+  weatherDetailLabel: {
+    fontSize: 10,
+    color: '#C8E6C9',
+    marginTop: 2,
+  },
+  weatherDetailValue: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
+  },
+  // Soil Health Styles
+  soilContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  soilScoreContainer: {
+    alignItems: 'center',
+    marginRight: 16,
+  },
+  soilScore: {
+    fontSize: 32,
+    fontWeight: 'bold',
+    color: '#4CAF50',
+  },
+  soilScoreLabel: {
+    fontSize: 10,
+    color: '#666666',
+    marginTop: 2,
+  },
+  soilStatus: {
+    fontSize: 12,
+    color: '#4CAF50',
+    fontWeight: 'bold',
+    marginTop: 2,
+  },
+  soilMetrics: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  soilMetricItem: {
+    alignItems: 'center',
+    flex: 1,
+  },
+  metricValue: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#2E7D32',
+  },
+  metricLabel: {
+    fontSize: 10,
+    color: '#666666',
+    textAlign: 'center',
+    marginTop: 2,
+  },
+  // Grow Now Section
+  growNowScroll: {
+    paddingLeft: 4,
+  },
+  growCard: {
+    width: 120,
+    padding: 12,
+    borderRadius: 16,
+    marginRight: 8,
+    alignItems: 'center',
+    elevation: 2,
+    shadowColor: '#000000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.1,
+    shadowRadius: 2,
+  },
+  cropEmoji: {
+    fontSize: 24,
+    marginBottom: 4,
+  },
+  cropName: {
+    fontSize: 12,
+    fontWeight: 'bold',
+    color: '#333333',
+    textAlign: 'center',
+    marginBottom: 2,
+  },
+  cropHindiName: {
+    fontSize: 10,
+    color: '#666666',
+    textAlign: 'center',
+    marginBottom: 6,
+  },
+  cropDetails: {
+    alignItems: 'center',
+    width: '100%',
+  },
+  cropSeason: {
+    fontSize: 9,
+    color: '#666666',
+    marginBottom: 2,
+  },
+  cropDays: {
+    fontSize: 9,
+    color: '#666666',
+    marginBottom: 4,
+  },
+  profitabilityBadge: {
+    paddingHorizontal: 6,
+    paddingVertical: 2,
+    borderRadius: 8,
+  },
+  profitabilityText: {
+    fontSize: 8,
+    color: '#FFFFFF',
+    fontWeight: 'bold',
+  },
+  // Alert Styles
+  alertCard: {
+    padding: 12,
+    borderRadius: 12,
+    marginBottom: 8,
+    borderLeftWidth: 4,
+    elevation: 1,
+    shadowColor: '#000000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.05,
+    shadowRadius: 2,
+  },
+  alertTitle: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    marginBottom: 4,
+  },
+  alertMessage: {
+    fontSize: 12,
+    color: '#666666',
+    lineHeight: 16,
+  },
+  // Quick Actions
+  quickActionsGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    paddingHorizontal: 4,
+  },
+  quickActionButton: {
+    backgroundColor: '#E8F5E8',
+    borderRadius: 12,
+    padding: 12,
+    alignItems: 'center',
+    width: '48%',
+    marginBottom: 8,
+    elevation: 1,
+    shadowColor: '#000000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.05,
+    shadowRadius: 2,
+  },
+  quickActionText: {
+    color: '#2E7D32',
+    fontSize: 11,
+    fontWeight: 'bold',
+    marginTop: 4,
+    textAlign: 'center',
+  },
+  // Floating Action Button
+  fab: {
+    position: 'absolute',
+    bottom: 80,
+    right: 16,
+    backgroundColor: '#2E7D32',
+    width: 48,
+    height: 48,
+    borderRadius: 24,
+    justifyContent: 'center',
+    alignItems: 'center',
+    elevation: 6,
+    shadowColor: '#000000',
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.3,
+    shadowRadius: 6,
+  },
+});
     borderRadius: 16,
     padding: 12,
     marginHorizontal: 8,
