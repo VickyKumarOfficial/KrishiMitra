@@ -615,15 +615,15 @@ const styles = StyleSheet.create({
   },
   // Section Styles
   section: {
-    marginHorizontal: 8,
-    marginBottom: 12,
+    marginHorizontal: 2,
+    marginBottom: 8,
   },
   sectionTitle: {
     fontSize: 16,
     fontWeight: 'bold',
     color: '#2E7D32',
-    marginBottom: 8,
-    paddingHorizontal: 4,
+    marginBottom: 6,
+    paddingHorizontal: 2,
   },
   // Card Styles
   card: {
