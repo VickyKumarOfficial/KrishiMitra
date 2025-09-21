@@ -887,7 +887,7 @@ const styles = StyleSheet.create({
   },
   // Grow Now List Styles
   growNowContainer: {
-    paddingHorizontal: 4,
+    paddingHorizontal: 2,
   },
   growCardFlex: {
     flexDirection: 'row',
