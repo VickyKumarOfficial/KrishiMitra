@@ -360,22 +360,28 @@ export default function DashboardScreen() {
           style={styles.quickActionButton}
           onPress={() => setShowDiseaseDetection(true)}
         >
-          <Ionicons name="camera" size={24} color="#FFFFFF" />
+          <Ionicons name="camera" size={20} color="#2E7D32" />
           <Text style={styles.quickActionText}>Disease Check</Text>
         </TouchableOpacity>
         <TouchableOpacity 
           style={styles.quickActionButton}
           onPress={() => setShowAIChat(true)}
         >
-          <Ionicons name="chatbubble" size={24} color="#FFFFFF" />
+          <Ionicons name="chatbubble" size={20} color="#2E7D32" />
           <Text style={styles.quickActionText}>AI Assistant</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.quickActionButton}>
-          <Ionicons name="analytics" size={24} color="#FFFFFF" />
+        <TouchableOpacity 
+          style={styles.quickActionButton}
+          onPress={() => setCurrentScreen('Market')}
+        >
+          <Ionicons name="analytics" size={20} color="#2E7D32" />
           <Text style={styles.quickActionText}>Price Trends</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.quickActionButton}>
-          <Ionicons name="calendar" size={24} color="#FFFFFF" />
+        <TouchableOpacity 
+          style={styles.quickActionButton}
+          onPress={() => Alert.alert('Crop Calendar', 'View planting and harvesting schedules\n\n📅 Kharif Season: June-Oct\n📅 Rabi Season: Nov-April\n📅 Zaid Season: April-June')}
+        >
+          <Ionicons name="calendar" size={20} color="#2E7D32" />
           <Text style={styles.quickActionText}>Crop Calendar</Text>
         </TouchableOpacity>
       </View>
