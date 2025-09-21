@@ -517,7 +517,7 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     flex: 1,
-    padding: 8,
+    padding: 2,
   },
   // App Header Styles
   appHeader: {
