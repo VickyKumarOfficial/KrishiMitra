@@ -502,6 +502,7 @@ export default function DashboardScreen() {
         visible={showDiseaseDetection}
         onClose={() => setShowDiseaseDetection(false)}
       />
+      {renderProfileModal()}
     </SafeAreaView>
   );
 }
