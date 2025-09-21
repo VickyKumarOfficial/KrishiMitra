@@ -565,7 +565,7 @@ export default function DashboardScreen() {
           color={currentScreen === 'Dashboard' ? '#2E7D32' : '#8A8A8A'}
         />
         <Text style={[styles.tabText, currentScreen === 'Dashboard' && styles.activeTabText]}>
-          डैशबोर्ड
+          {texts.tabLabels.dashboard}
         </Text>
       </TouchableOpacity>
 
@@ -579,7 +579,7 @@ export default function DashboardScreen() {
           color={currentScreen === 'Crops' ? '#2E7D32' : '#8A8A8A'}
         />
         <Text style={[styles.tabText, currentScreen === 'Crops' && styles.activeTabText]}>
-          फसल सुझाव
+          {texts.tabLabels.crops}
         </Text>
       </TouchableOpacity>
 
@@ -593,7 +593,7 @@ export default function DashboardScreen() {
           color={currentScreen === 'Market' ? '#2E7D32' : '#8A8A8A'}
         />
         <Text style={[styles.tabText, currentScreen === 'Market' && styles.activeTabText]}>
-          बाज़ार भाव
+          {texts.tabLabels.market}
         </Text>
       </TouchableOpacity>
 
@@ -607,7 +607,7 @@ export default function DashboardScreen() {
           color={currentScreen === 'Insights' ? '#2E7D32' : '#8A8A8A'}
         />
         <Text style={[styles.tabText, currentScreen === 'Insights' && styles.activeTabText]}>
-          मिट्टी मौसम
+          {texts.tabLabels.insights}
         </Text>
       </TouchableOpacity>
     </View>
