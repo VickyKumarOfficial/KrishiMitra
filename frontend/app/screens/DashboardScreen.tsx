@@ -503,6 +503,39 @@ const styles = StyleSheet.create({
   // Card Styles
   card: {
     backgroundColor: '#FFFFFF',
+    marginHorizontal: 8,
+    marginBottom: 12,
+    borderRadius: 16,
+    padding: 16,
+    elevation: 2,
+    shadowColor: '#000000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.1,
+    shadowRadius: 2,
+  },
+  cardHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 12,
+  },
+  cardTitle: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#2E7D32',
+    marginLeft: 8,
+  },
+  weatherCard: {
+    backgroundColor: '#4CAF50',
+  },
+  weatherCardTitle: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
+    marginLeft: 8,
+  },
+  soilCard: {
+    backgroundColor: '#FFFFFF',
+  },
   // Weather Card Styles
   weatherContent: {
     alignItems: 'center',
