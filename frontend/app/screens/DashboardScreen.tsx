@@ -256,53 +256,104 @@ export default function DashboardScreen() {
       <View style={styles.modalOverlay}>
         <View style={styles.profileModal}>
           <View style={styles.profileModalHeader}>
-            <Text style={styles.profileModalTitle}>Profile Settings</Text>
+            <Text style={styles.profileModalTitle}>
+              {selectedLanguage === 'hindi' ? 'प्रोफ़ाइल सेटिंग्स' : 'Profile Settings'}
+            </Text>
             <TouchableOpacity onPress={() => setShowProfileMenu(false)}>
               <Ionicons name="close" size={24} color="#666666" />
             </TouchableOpacity>
           </View>
           
           <ScrollView showsVerticalScrollIndicator={false}>
-            <TouchableOpacity style={styles.profileOption} onPress={() => Alert.alert('Personal Details', 'Feature coming soon!')}>
+            <TouchableOpacity 
+              style={styles.profileOption} 
+              onPress={() => Alert.alert(
+                texts.profileOptions.personalDetails, 
+                selectedLanguage === 'hindi' ? 'जल्द आ रहा है!' : 'Feature coming soon!'
+              )}
+            >
               <Ionicons name="person" size={20} color="#2E7D32" />
-              <Text style={styles.profileOptionText}>Personal Details</Text>
-              <Ionicons name="chevron-forward" size={16} color="#999999" />
-            </TouchableOpacity>
-            
-            <TouchableOpacity style={styles.profileOption} onPress={() => Alert.alert('Theme', 'Available themes:\n• Light\n• Dark\n• System Default')}>
-              <Ionicons name="color-palette" size={20} color="#2E7D32" />
-              <Text style={styles.profileOptionText}>Theme</Text>
+              <Text style={styles.profileOptionText}>{texts.profileOptions.personalDetails}</Text>
               <Ionicons name="chevron-forward" size={16} color="#999999" />
             </TouchableOpacity>
             
             <TouchableOpacity 
               style={styles.profileOption} 
-              onPress={() => {
-                const newLang = selectedLanguage === 'hindi' ? 'english' : 'hindi';
-                setSelectedLanguage(newLang);
-                Alert.alert('Language Changed', `Language switched to ${newLang === 'hindi' ? 'Hindi' : 'English'}`);
-              }}
+              onPress={() => Alert.alert(
+                texts.profileOptions.theme, 
+                selectedLanguage === 'hindi' 
+                  ? 'उपलब्ध थीम:\n• हल्का\n• गहरा\n• सिस्टम डिफ़ॉल्ट'
+                  : 'Available themes:\n• Light\n• Dark\n• System Default'
+              )}
             >
-              <Ionicons name="language" size={20} color="#2E7D32" />
-              <Text style={styles.profileOptionText}>Languages</Text>
-              <Text style={styles.profileOptionSubtext}>{selectedLanguage === 'hindi' ? 'हिंदी' : 'English'}</Text>
+              <Ionicons name="color-palette" size={20} color="#2E7D32" />
+              <Text style={styles.profileOptionText}>{texts.profileOptions.theme}</Text>
+              <Ionicons name="chevron-forward" size={16} color="#999999" />
             </TouchableOpacity>
             
-            <TouchableOpacity style={styles.profileOption} onPress={() => Alert.alert('Farm Details', 'Manage your farm information')}>
+            {/* Language Toggle Options */}
+            <View style={styles.languageSection}>
+              <View style={styles.languageSectionHeader}>
+                <Ionicons name="language" size={20} color="#2E7D32" />
+                <Text style={styles.profileOptionText}>{texts.profileOptions.languages}</Text>
+              </View>
+              
+              <TouchableOpacity 
+                style={[styles.languageOption, selectedLanguage === 'hindi' && styles.selectedLanguageOption]}
+                onPress={() => changeLanguage('hindi')}
+              >
+                <Text style={[styles.languageOptionText, selectedLanguage === 'hindi' && styles.selectedLanguageText]}>
+                  हिंदी (Hindi)
+                </Text>
+                {selectedLanguage === 'hindi' && <Ionicons name="checkmark" size={16} color="#2E7D32" />}
+              </TouchableOpacity>
+              
+              <TouchableOpacity 
+                style={[styles.languageOption, selectedLanguage === 'english' && styles.selectedLanguageOption]}
+                onPress={() => changeLanguage('english')}
+              >
+                <Text style={[styles.languageOptionText, selectedLanguage === 'english' && styles.selectedLanguageText]}>
+                  English (अंग्रेजी)
+                </Text>
+                {selectedLanguage === 'english' && <Ionicons name="checkmark" size={16} color="#2E7D32" />}
+              </TouchableOpacity>
+            </View>
+            
+            <TouchableOpacity 
+              style={styles.profileOption} 
+              onPress={() => Alert.alert(
+                texts.profileOptions.farmDetails, 
+                selectedLanguage === 'hindi' ? 'अपनी फार्म जानकारी प्रबंधित करें' : 'Manage your farm information'
+              )}
+            >
               <Ionicons name="leaf" size={20} color="#2E7D32" />
-              <Text style={styles.profileOptionText}>Farm Details</Text>
+              <Text style={styles.profileOptionText}>{texts.profileOptions.farmDetails}</Text>
               <Ionicons name="chevron-forward" size={16} color="#999999" />
             </TouchableOpacity>
             
-            <TouchableOpacity style={styles.profileOption} onPress={() => Alert.alert('Help & Support', '24/7 support available\nCall: 1800-123-4567')}>
+            <TouchableOpacity 
+              style={styles.profileOption} 
+              onPress={() => Alert.alert(
+                texts.profileOptions.helpSupport, 
+                selectedLanguage === 'hindi' 
+                  ? '24/7 सहायता उपलब्ध\nकॉल: 1800-123-4567'
+                  : '24/7 support available\nCall: 1800-123-4567'
+              )}
+            >
               <Ionicons name="help-circle" size={20} color="#2E7D32" />
-              <Text style={styles.profileOptionText}>Help & Support</Text>
+              <Text style={styles.profileOptionText}>{texts.profileOptions.helpSupport}</Text>
               <Ionicons name="chevron-forward" size={16} color="#999999" />
             </TouchableOpacity>
             
-            <TouchableOpacity style={styles.profileOption} onPress={() => Alert.alert('Contact Us', 'Email: support@krishimitra.com\nPhone: +91-9876543210')}>
+            <TouchableOpacity 
+              style={styles.profileOption} 
+              onPress={() => Alert.alert(
+                texts.profileOptions.contactUs, 
+                'Email: support@krishimitra.com\nPhone: +91-9876543210'
+              )}
+            >
               <Ionicons name="mail" size={20} color="#2E7D32" />
-              <Text style={styles.profileOptionText}>Contact Us</Text>
+              <Text style={styles.profileOptionText}>{texts.profileOptions.contactUs}</Text>
               <Ionicons name="chevron-forward" size={16} color="#999999" />
             </TouchableOpacity>
           </ScrollView>
