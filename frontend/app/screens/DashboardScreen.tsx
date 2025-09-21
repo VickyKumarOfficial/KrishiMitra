@@ -352,16 +352,6 @@ export default function DashboardScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* Header */}
-      <View style={styles.header}>
-        <Text style={styles.headerTitle}>
-          {currentScreen === 'Dashboard' && 'डैशबोर्ड | Dashboard'}
-          {currentScreen === 'Crops' && 'फसल सुझाव | Crop Recommendations'}
-          {currentScreen === 'Market' && 'बाज़ार भाव | Market Prices'}
-          {currentScreen === 'Insights' && 'मिट्टी और मौसम | Soil & Weather'}
-        </Text>
-      </View>
-
       {/* Current Screen Content */}
       <View style={styles.content}>
         {renderCurrentScreen()}
