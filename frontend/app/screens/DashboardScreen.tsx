@@ -158,10 +158,73 @@ export default function DashboardScreen() {
           <Text style={styles.locationText}>{mockDashboardData.user.location}</Text>
         </View>
       </View>
-      <TouchableOpacity style={styles.profileIcon}>
+      <TouchableOpacity 
+        style={styles.profileIcon}
+        onPress={() => setShowProfileMenu(true)}
+      >
         <Ionicons name="person-circle" size={40} color="#2E7D32" />
       </TouchableOpacity>
     </View>
+  );
+
+  const renderProfileModal = () => (
+    <Modal visible={showProfileMenu} animationType="slide" transparent={true}>
+      <View style={styles.modalOverlay}>
+        <View style={styles.profileModal}>
+          <View style={styles.profileModalHeader}>
+            <Text style={styles.profileModalTitle}>Profile Settings</Text>
+            <TouchableOpacity onPress={() => setShowProfileMenu(false)}>
+              <Ionicons name="close" size={24} color="#666666" />
+            </TouchableOpacity>
+          </View>
+          
+          <ScrollView showsVerticalScrollIndicator={false}>
+            <TouchableOpacity style={styles.profileOption} onPress={() => Alert.alert('Personal Details', 'Feature coming soon!')}>
+              <Ionicons name="person" size={20} color="#2E7D32" />
+              <Text style={styles.profileOptionText}>Personal Details</Text>
+              <Ionicons name="chevron-forward" size={16} color="#999999" />
+            </TouchableOpacity>
+            
+            <TouchableOpacity style={styles.profileOption} onPress={() => Alert.alert('Theme', 'Available themes:\n• Light\n• Dark\n• System Default')}>
+              <Ionicons name="color-palette" size={20} color="#2E7D32" />
+              <Text style={styles.profileOptionText}>Theme</Text>
+              <Ionicons name="chevron-forward" size={16} color="#999999" />
+            </TouchableOpacity>
+            
+            <TouchableOpacity 
+              style={styles.profileOption} 
+              onPress={() => {
+                const newLang = selectedLanguage === 'hindi' ? 'english' : 'hindi';
+                setSelectedLanguage(newLang);
+                Alert.alert('Language Changed', `Language switched to ${newLang === 'hindi' ? 'Hindi' : 'English'}`);
+              }}
+            >
+              <Ionicons name="language" size={20} color="#2E7D32" />
+              <Text style={styles.profileOptionText}>Languages</Text>
+              <Text style={styles.profileOptionSubtext}>{selectedLanguage === 'hindi' ? 'हिंदी' : 'English'}</Text>
+            </TouchableOpacity>
+            
+            <TouchableOpacity style={styles.profileOption} onPress={() => Alert.alert('Farm Details', 'Manage your farm information')}>
+              <Ionicons name="leaf" size={20} color="#2E7D32" />
+              <Text style={styles.profileOptionText}>Farm Details</Text>
+              <Ionicons name="chevron-forward" size={16} color="#999999" />
+            </TouchableOpacity>
+            
+            <TouchableOpacity style={styles.profileOption} onPress={() => Alert.alert('Help & Support', '24/7 support available\nCall: 1800-123-4567')}>
+              <Ionicons name="help-circle" size={20} color="#2E7D32" />
+              <Text style={styles.profileOptionText}>Help & Support</Text>
+              <Ionicons name="chevron-forward" size={16} color="#999999" />
+            </TouchableOpacity>
+            
+            <TouchableOpacity style={styles.profileOption} onPress={() => Alert.alert('Contact Us', 'Email: support@krishimitra.com\nPhone: +91-9876543210')}>
+              <Ionicons name="mail" size={20} color="#2E7D32" />
+              <Text style={styles.profileOptionText}>Contact Us</Text>
+              <Ionicons name="chevron-forward" size={16} color="#999999" />
+            </TouchableOpacity>
+          </ScrollView>
+        </View>
+      </View>
+    </Modal>
   );
 
   const renderWeatherCard = () => (
