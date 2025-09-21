@@ -117,21 +117,45 @@ export default function DashboardScreen() {
     }, 2000);
   };
 
+  const renderAppHeader = () => (
+    <View style={styles.appHeader}>
+      <Text style={styles.appName}>KrishiMitra</Text>
+      <Text style={styles.appSlogan}>Your personalized AI based crop recommendation</Text>
+    </View>
+  );
+
+  const renderProfileSection = () => (
+    <View style={styles.profileContainer}>
+      <View style={styles.profileLeft}>
+        <Text style={styles.greeting}>Hello, {mockDashboardData.user.name}</Text>
+        <View style={styles.locationRow}>
+          <Ionicons name="location" size={14} color="#666666" />
+          <Text style={styles.locationText}>{mockDashboardData.user.location}</Text>
+        </View>
+      </View>
+      <TouchableOpacity style={styles.profileIcon}>
+        <Ionicons name="person-circle" size={40} color="#2E7D32" />
+      </TouchableOpacity>
+    </View>
+  );
+
   const renderWeatherCard = () => (
-    <View style={styles.card}>
+    <View style={[styles.card, styles.weatherCard]}>
       <View style={styles.cardHeader}>
-        <Ionicons name={mockDashboardData.weather.icon} size={24} color="#2E7D32" />
-        <Text style={styles.cardTitle}>मौसम | Weather</Text>
+        <Ionicons name={mockDashboardData.weather.icon} size={28} color="#FFFFFF" />
+        <Text style={styles.weatherCardTitle}>मौसम | Weather</Text>
       </View>
       <View style={styles.weatherContent}>
         <Text style={styles.temperature}>{mockDashboardData.weather.temperature}°C</Text>
         <Text style={styles.weatherCondition}>{mockDashboardData.weather.condition}</Text>
         <View style={styles.weatherDetails}>
           <View style={styles.weatherDetailItem}>
+            <Ionicons name="water" size={16} color="#FFFFFF" />
             <Text style={styles.weatherDetailLabel}>Humidity</Text>
             <Text style={styles.weatherDetailValue}>{mockDashboardData.weather.humidity}%</Text>
           </View>
           <View style={styles.weatherDetailItem}>
+            <Ionicons name="rainy" size={16} color="#FFFFFF" />
             <Text style={styles.weatherDetailLabel}>Rainfall</Text>
             <Text style={styles.weatherDetailValue}>{mockDashboardData.weather.rainfall}mm</Text>
           </View>
