@@ -275,10 +275,14 @@ export default function DashboardScreen() {
         return (
           <ScrollView
             style={styles.scrollView}
+            showsVerticalScrollIndicator={false}
             refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
           >
+            {renderAppHeader()}
+            {renderProfileSection()}
             {renderWeatherCard()}
             {renderSoilHealthCard()}
+            {renderGrowNowSection()}
             {renderAlertsCard()}
             {renderQuickActions()}
           </ScrollView>
