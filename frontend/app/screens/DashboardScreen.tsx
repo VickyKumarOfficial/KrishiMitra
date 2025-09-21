@@ -67,6 +67,7 @@ export default function DashboardScreen() {
   const [refreshing, setRefreshing] = useState(false);
   const [showAIChat, setShowAIChat] = useState(false);
   const [showDiseaseDetection, setShowDiseaseDetection] = useState(false);
+  const [currentScreen, setCurrentScreen] = useState('Dashboard');
 
   const onRefresh = () => {
     setRefreshing(true);
