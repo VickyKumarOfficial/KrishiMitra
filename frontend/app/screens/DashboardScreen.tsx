@@ -18,6 +18,10 @@ import InsightsScreen from './InsightsScreen';
 
 // Mock data
 const mockDashboardData = {
+  user: {
+    name: 'राम कुमार | Ram Kumar',
+    location: 'Ranchi, Jharkhand',
+  },
   weather: {
     temperature: 28,
     condition: 'Partly Cloudy',
@@ -32,27 +36,62 @@ const mockDashboardData = {
     temperature: 24,
     status: 'Good',
   },
+  growNow: [
+    {
+      id: 1,
+      name: 'Paddy Rice',
+      hindiName: 'धान',
+      season: 'Kharif',
+      daysToHarvest: 120,
+      profitability: 'High',
+      image: '🌾',
+      bgColor: '#E8F5E8',
+    },
+    {
+      id: 2,
+      name: 'Maize',
+      hindiName: 'मक्का',
+      season: 'Kharif',
+      daysToHarvest: 90,
+      profitability: 'Medium',
+      image: '🌽',
+      bgColor: '#FFF3E0',
+    },
+    {
+      id: 3,
+      name: 'Green Vegetables',
+      hindiName: 'हरी सब्जी',
+      season: 'Year Round',
+      daysToHarvest: 45,
+      profitability: 'High',
+      image: '🥬',
+      bgColor: '#E3F2FD',
+    },
+  ],
   alerts: [
     {
       id: 1,
       type: 'critical',
       title: 'Heavy Rainfall Alert',
       message: 'भारी बारिश की चेतावनी | Heavy rain expected in 24 hours',
-      severity: '🔴',
+      bgColor: '#FFEBEE',
+      borderColor: '#F44336',
     },
     {
       id: 2,
       type: 'moderate',
       title: 'Soil Moisture Low',
       message: 'मिट्टी में नमी कम | Consider irrigation for better yield',
-      severity: '🟠',
+      bgColor: '#FFF3E0',
+      borderColor: '#FF9800',
     },
     {
       id: 3,
       type: 'normal',
       title: 'Optimal Growing Conditions',
       message: 'अच्छी खेती की स्थिति | Perfect conditions for crop growth',
-      severity: '🟢',
+      bgColor: '#E8F5E8',
+      borderColor: '#4CAF50',
     },
   ],
   quickStats: {
