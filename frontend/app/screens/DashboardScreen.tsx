@@ -371,35 +371,39 @@ export default function DashboardScreen() {
       <View style={styles.weatherContent}>
         <View style={styles.mainWeather}>
           <Text style={styles.temperature}>{mockDashboardData.weather.temperature}°C</Text>
-          <Text style={styles.weatherCondition}>{mockDashboardData.weather.condition}</Text>
+          <Text style={styles.weatherCondition}>{selectedLanguage === 'hindi' ? texts.partlyCloudy : mockDashboardData.weather.condition}</Text>
         </View>
         <View style={styles.weatherDetails}>
           <View style={styles.weatherDetailItem}>
             <Ionicons name="water" size={16} color="#FFFFFF" />
-            <Text style={styles.weatherDetailLabel}>Humidity</Text>
+            <Text style={styles.weatherDetailLabel}>{texts.humidity}</Text>
             <Text style={styles.weatherDetailValue}>{mockDashboardData.weather.humidity}%</Text>
           </View>
           <View style={styles.weatherDetailItem}>
             <Ionicons name="rainy" size={16} color="#FFFFFF" />
-            <Text style={styles.weatherDetailLabel}>Rainfall</Text>
+            <Text style={styles.weatherDetailLabel}>{texts.rainfall}</Text>
             <Text style={styles.weatherDetailValue}>{mockDashboardData.weather.rainfall}mm</Text>
           </View>
         </View>
         
         {/* 3-Day Forecast */}
         <View style={styles.forecastContainer}>
-          <Text style={styles.forecastTitle}>3-Day Forecast</Text>
+          <Text style={styles.forecastTitle}>{texts.forecastTitle}</Text>
           <View style={styles.forecastRow}>
-            {mockDashboardData.weather.forecast.map((day, index) => (
-              <View key={index} style={styles.forecastItem}>
-                <Text style={styles.forecastDay}>{day.day}</Text>
-                <Ionicons name={day.icon} size={20} color="#FFFFFF" />
-                <Text style={styles.forecastTemp}>{day.temp}°</Text>
-                {day.rain > 0 && (
-                  <Text style={styles.forecastRain}>{day.rain}mm</Text>
-                )}
-              </View>
-            ))}
+            {mockDashboardData.weather.forecast.map((day, index) => {
+              const dayLabels = [texts.tomorrow, texts.day3, texts.day4];
+              const conditionLabels = [texts.sunny, texts.rainy, texts.cloudy];
+              return (
+                <View key={index} style={styles.forecastItem}>
+                  <Text style={styles.forecastDay}>{dayLabels[index]}</Text>
+                  <Ionicons name={day.icon} size={20} color="#FFFFFF" />
+                  <Text style={styles.forecastTemp}>{day.temp}°</Text>
+                  {day.rain > 0 && (
+                    <Text style={styles.forecastRain}>{day.rain}mm</Text>
+                  )}
+                </View>
+              );
+            })}
           </View>
         </View>
       </View>
