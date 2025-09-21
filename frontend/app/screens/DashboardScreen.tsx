@@ -17,6 +17,74 @@ import CropRecommendationsScreen from './CropRecommendationsScreen';
 import MarketPricesScreen from './MarketPricesScreen';
 import InsightsScreen from './InsightsScreen';
 
+// Language texts
+const getLanguageTexts = (language: string) => ({
+  appName: 'KrishiMitra',
+  appSlogan: language === 'hindi' 
+    ? 'आपका व्यक्तिगत AI आधारित फसल सिफारिश'
+    : 'Your personalized AI based crop recommendation',
+  greeting: language === 'hindi' 
+    ? 'नमस्कार, राम कुमार'
+    : 'Hello, Ram Kumar',
+  location: 'Ranchi, Jharkhand',
+  weather: language === 'hindi' ? 'मौसम' : 'Weather',
+  soilHealth: language === 'hindi' ? 'मिट्टी स्वास्थ्य' : 'Soil Health',
+  healthScore: language === 'hindi' ? 'स्वास्थ्य स्कोर' : 'Health Score',
+  status: language === 'hindi' ? 'स्थिति: अच्छी' : 'Status: Good',
+  phLevel: language === 'hindi' ? 'pH स्तर' : 'pH Level',
+  moisture: language === 'hindi' ? 'नमी' : 'Moisture',
+  temperature: language === 'hindi' ? 'तापमान' : 'Temperature',
+  whatToGrow: language === 'hindi' ? 'अभी क्या उगाएं?' : 'What to grow now?',
+  alerts: language === 'hindi' ? 'अलर्ट' : 'Alerts',
+  quickActions: language === 'hindi' ? 'त्वरित कार्य' : 'Quick Actions',
+  forecastTitle: language === 'hindi' ? '3-दिन पूर्वानुमान' : '3-Day Forecast',
+  humidity: language === 'hindi' ? 'नमी' : 'Humidity',
+  rainfall: language === 'hindi' ? 'वर्षा' : 'Rainfall',
+  partlyCloudy: language === 'hindi' ? 'आंशिक बादल' : 'Partly Cloudy',
+  sunny: language === 'hindi' ? 'धूप' : 'Sunny',
+  rainy: language === 'hindi' ? 'बारिश' : 'Rainy',
+  cloudy: language === 'hindi' ? 'बादल' : 'Cloudy',
+  tomorrow: language === 'hindi' ? 'कल' : 'Tomorrow',
+  day3: language === 'hindi' ? 'दिन 3' : 'Day 3',
+  day4: language === 'hindi' ? 'दिन 4' : 'Day 4',
+  crops: {
+    paddyRice: language === 'hindi' ? 'धान' : 'Paddy Rice',
+    maize: language === 'hindi' ? 'मक्का' : 'Maize',
+    greenVegetables: language === 'hindi' ? 'हरी सब्जी' : 'Green Vegetables',
+  },
+  alertMessages: {
+    heavyRainfall: language === 'hindi' 
+      ? 'भारी बारिश की चेतावनी - अगले 24 घंटों में तेज़ बारिश संभावित'
+      : 'Heavy Rainfall Alert - Heavy rain expected in 24 hours',
+    soilMoistureLow: language === 'hindi'
+      ? 'मिट्टी में नमी कम - बेहतर उपज के लिए सिंचाई करें'
+      : 'Soil Moisture Low - Consider irrigation for better yield',
+    optimalConditions: language === 'hindi'
+      ? 'अच्छी खेती की स्थिति - फसल वृद्धि के लिए उत्तम स्थिति'
+      : 'Optimal Growing Conditions - Perfect conditions for crop growth',
+  },
+  actionButtons: {
+    diseaseCheck: language === 'hindi' ? 'रोग जांच' : 'Disease Check',
+    aiAssistant: language === 'hindi' ? 'AI सहायक' : 'AI Assistant',
+    priceTrends: language === 'hindi' ? 'मूल्य रुझान' : 'Price Trends',
+    cropCalendar: language === 'hindi' ? 'फसल कैलेंडर' : 'Crop Calendar',
+  },
+  tabLabels: {
+    dashboard: language === 'hindi' ? 'डैशबोर्ड' : 'Dashboard',
+    crops: language === 'hindi' ? 'फसल सुझाव' : 'Crop Recommendations',
+    market: language === 'hindi' ? 'बाज़ार भाव' : 'Market Prices',
+    insights: language === 'hindi' ? 'मिट्टी मौसम' : 'Soil & Weather',
+  },
+  profileOptions: {
+    personalDetails: language === 'hindi' ? 'व्यक्तिगत विवरण' : 'Personal Details',
+    theme: language === 'hindi' ? 'थीम' : 'Theme',
+    languages: language === 'hindi' ? 'भाषाएं' : 'Languages',
+    farmDetails: language === 'hindi' ? 'खेत विवरण' : 'Farm Details',
+    helpSupport: language === 'hindi' ? 'सहायता और समर्थन' : 'Help & Support',
+    contactUs: language === 'hindi' ? 'संपर्क करें' : 'Contact Us',
+  },
+});
+
 // Mock data
 const mockDashboardData = {
   user: {
