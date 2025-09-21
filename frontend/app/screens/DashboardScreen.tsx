@@ -28,6 +28,29 @@ const mockDashboardData = {
     humidity: 68,
     rainfall: 5.2,
     icon: 'partly-sunny',
+    forecast: [
+      {
+        day: 'Tomorrow',
+        temp: 30,
+        condition: 'Sunny',
+        icon: 'sunny',
+        rain: 0,
+      },
+      {
+        day: 'Day 3',
+        temp: 26,
+        condition: 'Rainy',
+        icon: 'rainy',
+        rain: 15,
+      },
+      {
+        day: 'Day 4',
+        temp: 29,
+        condition: 'Cloudy',
+        icon: 'cloudy',
+        rain: 2,
+      },
+    ],
   },
   soilHealth: {
     score: 78,
