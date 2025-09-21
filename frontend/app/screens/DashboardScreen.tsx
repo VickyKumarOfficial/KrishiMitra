@@ -107,6 +107,8 @@ export default function DashboardScreen() {
   const [showAIChat, setShowAIChat] = useState(false);
   const [showDiseaseDetection, setShowDiseaseDetection] = useState(false);
   const [currentScreen, setCurrentScreen] = useState('Dashboard');
+  const [showProfileMenu, setShowProfileMenu] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState('hindi');
 
   const onRefresh = () => {
     setRefreshing(true);
