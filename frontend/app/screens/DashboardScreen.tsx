@@ -845,6 +845,128 @@ const styles = StyleSheet.create({
     marginTop: 4,
     textAlign: 'center',
   },
+  // Weather Forecast Styles
+  mainWeather: {
+    alignItems: 'center',
+    marginBottom: 12,
+  },
+  forecastContainer: {
+    marginTop: 12,
+    paddingTop: 12,
+    borderTopWidth: 1,
+    borderTopColor: 'rgba(255, 255, 255, 0.3)',
+  },
+  forecastTitle: {
+    fontSize: 12,
+    color: '#C8E6C9',
+    marginBottom: 8,
+    textAlign: 'center',
+  },
+  forecastRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+  },
+  forecastItem: {
+    alignItems: 'center',
+    flex: 1,
+  },
+  forecastDay: {
+    fontSize: 9,
+    color: '#C8E6C9',
+    marginBottom: 4,
+  },
+  forecastTemp: {
+    fontSize: 12,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
+    marginTop: 4,
+  },
+  forecastRain: {
+    fontSize: 8,
+    color: '#81C784',
+    marginTop: 2,
+  },
+  // Grow Now List Styles
+  growNowContainer: {
+    paddingHorizontal: 4,
+  },
+  growCardFlex: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 12,
+    borderRadius: 12,
+    marginBottom: 8,
+    elevation: 2,
+    shadowColor: '#000000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.1,
+    shadowRadius: 2,
+  },
+  cropImageContainer: {
+    width: 50,
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 12,
+  },
+  cropInfoContainer: {
+    flex: 1,
+  },
+  cropMetrics: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 4,
+  },
+  cropProfitContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  // Profile Modal Styles
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    justifyContent: 'flex-end',
+  },
+  profileModal: {
+    backgroundColor: '#FFFFFF',
+    borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    paddingTop: 16,
+    maxHeight: '70%',
+  },
+  profileModalHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+    paddingBottom: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: '#E0E0E0',
+  },
+  profileModalTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: '#2E7D32',
+  },
+  profileOption: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+    paddingVertical: 16,
+    borderBottomWidth: 1,
+    borderBottomColor: '#F5F5F5',
+  },
+  profileOptionText: {
+    flex: 1,
+    fontSize: 16,
+    color: '#333333',
+    marginLeft: 12,
+  },
+  profileOptionSubtext: {
+    fontSize: 14,
+    color: '#666666',
+    marginRight: 8,
+  },
   // Floating Action Button
   fab: {
     position: 'absolute',
