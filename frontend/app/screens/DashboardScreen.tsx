@@ -366,7 +366,7 @@ export default function DashboardScreen() {
     <View style={[styles.card, styles.weatherCard]}>
       <View style={styles.cardHeader}>
         <Ionicons name={mockDashboardData.weather.icon} size={28} color="#FFFFFF" />
-        <Text style={styles.weatherCardTitle}>मौसम | Weather</Text>
+        <Text style={styles.weatherCardTitle}>{texts.weather}</Text>
       </View>
       <View style={styles.weatherContent}>
         <View style={styles.mainWeather}>
