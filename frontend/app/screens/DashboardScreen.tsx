@@ -236,10 +236,10 @@ export default function DashboardScreen() {
   const renderProfileSection = () => (
     <View style={styles.profileContainer}>
       <View style={styles.profileLeft}>
-        <Text style={styles.greeting}>Hello, {mockDashboardData.user.name}</Text>
+        <Text style={styles.greeting}>{texts.greeting}</Text>
         <View style={styles.locationRow}>
           <Ionicons name="location" size={14} color="#666666" />
-          <Text style={styles.locationText}>{mockDashboardData.user.location}</Text>
+          <Text style={styles.locationText}>{texts.location}</Text>
         </View>
       </View>
       <TouchableOpacity 
