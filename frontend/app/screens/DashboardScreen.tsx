@@ -178,18 +178,110 @@ export default function DashboardScreen() {
     </View>
   );
 
+  const renderCurrentScreen = () => {
+    switch (currentScreen) {
+      case 'Crops':
+        return <CropRecommendationsScreen />;
+      case 'Market':
+        return <MarketPricesScreen />;
+      case 'Insights':
+        return <InsightsScreen />;
+      default:
+        return (
+          <ScrollView
+            style={styles.scrollView}
+            refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
+          >
+            {renderWeatherCard()}
+            {renderSoilHealthCard()}
+            {renderAlertsCard()}
+            {renderQuickActions()}
+          </ScrollView>
+        );
+    }
+  };
+
+  const renderBottomTabs = () => (
+    <View style={styles.bottomTabs}>
+      <TouchableOpacity
+        style={[styles.tab, currentScreen === 'Dashboard' && styles.activeTab]}
+        onPress={() => setCurrentScreen('Dashboard')}
+      >
+        <Ionicons
+          name={currentScreen === 'Dashboard' ? 'home' : 'home-outline'}
+          size={24}
+          color={currentScreen === 'Dashboard' ? '#2E7D32' : '#8A8A8A'}
+        />
+        <Text style={[styles.tabText, currentScreen === 'Dashboard' && styles.activeTabText]}>
+          डैशबोर्ड
+        </Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        style={[styles.tab, currentScreen === 'Crops' && styles.activeTab]}
+        onPress={() => setCurrentScreen('Crops')}
+      >
+        <Ionicons
+          name={currentScreen === 'Crops' ? 'leaf' : 'leaf-outline'}
+          size={24}
+          color={currentScreen === 'Crops' ? '#2E7D32' : '#8A8A8A'}
+        />
+        <Text style={[styles.tabText, currentScreen === 'Crops' && styles.activeTabText]}>
+          फसल सुझाव
+        </Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        style={[styles.tab, currentScreen === 'Market' && styles.activeTab]}
+        onPress={() => setCurrentScreen('Market')}
+      >
+        <Ionicons
+          name={currentScreen === 'Market' ? 'analytics' : 'analytics-outline'}
+          size={24}
+          color={currentScreen === 'Market' ? '#2E7D32' : '#8A8A8A'}
+        />
+        <Text style={[styles.tabText, currentScreen === 'Market' && styles.activeTabText]}>
+          बाज़ार भाव
+        </Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        style={[styles.tab, currentScreen === 'Insights' && styles.activeTab]}
+        onPress={() => setCurrentScreen('Insights')}
+      >
+        <Ionicons
+          name={currentScreen === 'Insights' ? 'cloud' : 'cloud-outline'}
+          size={24}
+          color={currentScreen === 'Insights' ? '#2E7D32' : '#8A8A8A'}
+        />
+        <Text style={[styles.tabText, currentScreen === 'Insights' && styles.activeTabText]}>
+          मिट्टी मौसम
+        </Text>
+      </TouchableOpacity>
+    </View>
+  );
+
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView
-        style={styles.scrollView}
-        refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
-      >
-        {renderWeatherCard()}
-        {renderSoilHealthCard()}
-        {renderAlertsCard()}
-        {renderQuickActions()}
-      </ScrollView>
-      
+      {/* Header */}
+      <View style={styles.header}>
+        <Text style={styles.headerTitle}>
+          {currentScreen === 'Dashboard' && 'डैशबोर्ड | Dashboard'}
+          {currentScreen === 'Crops' && 'फसल सुझाव | Crop Recommendations'}
+          {currentScreen === 'Market' && 'बाज़ार भाव | Market Prices'}
+          {currentScreen === 'Insights' && 'मिट्टी और मौसम | Soil & Weather'}
+        </Text>
+      </View>
+
+      {/* Current Screen Content */}
+      <View style={styles.content}>
+        {renderCurrentScreen()}
+      </View>
+
+      {/* Bottom Navigation */}
+      {renderBottomTabs()}
+
+      {/* Floating Action Button for AI Chat */}
       <TouchableOpacity
         style={styles.fab}
         onPress={() => setShowAIChat(true)}
