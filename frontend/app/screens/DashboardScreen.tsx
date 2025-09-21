@@ -522,12 +522,11 @@ const styles = StyleSheet.create({
   // App Header Styles
   appHeader: {
     backgroundColor: '#2E7D32',
-    paddingHorizontal: 12,
+    paddingHorizontal: 16,
     paddingTop: 16,
     paddingBottom: 12,
-    borderBottomLeftRadius: 20,
-    borderBottomRightRadius: 20,
-    marginBottom: 8,
+    marginBottom: 4,
+    width: '100%',
   },
   appName: {
     fontSize: 24,
