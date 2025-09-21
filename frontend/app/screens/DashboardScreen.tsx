@@ -1104,6 +1104,42 @@ const styles = StyleSheet.create({
     color: '#666666',
     marginRight: 8,
   },
+  // Language Selection Styles
+  languageSection: {
+    paddingHorizontal: 20,
+    paddingVertical: 8,
+    borderBottomWidth: 1,
+    borderBottomColor: '#F5F5F5',
+  },
+  languageSectionHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 12,
+  },
+  languageOption: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+    marginHorizontal: 12,
+    marginBottom: 8,
+    borderRadius: 8,
+    backgroundColor: '#F8F8F8',
+  },
+  selectedLanguageOption: {
+    backgroundColor: '#E8F5E8',
+    borderWidth: 1,
+    borderColor: '#2E7D32',
+  },
+  languageOptionText: {
+    fontSize: 14,
+    color: '#333333',
+  },
+  selectedLanguageText: {
+    color: '#2E7D32',
+    fontWeight: 'bold',
+  },
   // Floating Action Button
   fab: {
     position: 'absolute',
