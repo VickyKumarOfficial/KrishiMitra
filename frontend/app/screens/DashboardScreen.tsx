@@ -165,7 +165,7 @@ export default function DashboardScreen() {
   );
 
   const renderSoilHealthCard = () => (
-    <View style={styles.card}>
+    <View style={[styles.card, styles.soilCard]}>
       <View style={styles.cardHeader}>
         <Ionicons name="leaf" size={24} color="#2E7D32" />
         <Text style={styles.cardTitle}>मिट्टी स्वास्थ्य | Soil Health</Text>
@@ -174,22 +174,47 @@ export default function DashboardScreen() {
         <View style={styles.soilScoreContainer}>
           <Text style={styles.soilScore}>{mockDashboardData.soilHealth.score}</Text>
           <Text style={styles.soilScoreLabel}>Health Score</Text>
+          <Text style={styles.soilStatus}>Status: {mockDashboardData.soilHealth.status}</Text>
         </View>
-        <View style={styles.soilDetails}>
-          <View style={styles.soilDetailRow}>
-            <Text style={styles.soilDetailLabel}>pH Level:</Text>
-            <Text style={styles.soilDetailValue}>{mockDashboardData.soilHealth.pH}</Text>
+        <View style={styles.soilMetrics}>
+          <View style={styles.soilMetricItem}>
+            <Text style={styles.metricValue}>{mockDashboardData.soilHealth.pH}</Text>
+            <Text style={styles.metricLabel}>pH Level</Text>
           </View>
-          <View style={styles.soilDetailRow}>
-            <Text style={styles.soilDetailLabel}>Moisture:</Text>
-            <Text style={styles.soilDetailValue}>{mockDashboardData.soilHealth.moisture}%</Text>
+          <View style={styles.soilMetricItem}>
+            <Text style={styles.metricValue}>{mockDashboardData.soilHealth.moisture}%</Text>
+            <Text style={styles.metricLabel}>Moisture</Text>
           </View>
-          <View style={styles.soilDetailRow}>
-            <Text style={styles.soilDetailLabel}>Temperature:</Text>
-            <Text style={styles.soilDetailValue}>{mockDashboardData.soilHealth.temperature}°C</Text>
+          <View style={styles.soilMetricItem}>
+            <Text style={styles.metricValue}>{mockDashboardData.soilHealth.temperature}°C</Text>
+            <Text style={styles.metricLabel}>Temperature</Text>
           </View>
         </View>
       </View>
+    </View>
+  );
+
+  const renderGrowNowSection = () => (
+    <View style={styles.section}>
+      <Text style={styles.sectionTitle}>अभी क्या उगाएं? | What to grow now?</Text>
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.growNowScroll}>
+        {mockDashboardData.growNow.map((crop) => (
+          <TouchableOpacity key={crop.id} style={[styles.growCard, {backgroundColor: crop.bgColor}]}>
+            <Text style={styles.cropEmoji}>{crop.image}</Text>
+            <Text style={styles.cropName}>{crop.name}</Text>
+            <Text style={styles.cropHindiName}>{crop.hindiName}</Text>
+            <View style={styles.cropDetails}>
+              <Text style={styles.cropSeason}>{crop.season}</Text>
+              <Text style={styles.cropDays}>{crop.daysToHarvest} days</Text>
+              <View style={[styles.profitabilityBadge, {
+                backgroundColor: crop.profitability === 'High' ? '#4CAF50' : '#FF9800'
+              }]}>
+                <Text style={styles.profitabilityText}>{crop.profitability} Profit</Text>
+              </View>
+            </View>
+          </TouchableOpacity>
+        ))}
+      </ScrollView>
     </View>
   );
 
