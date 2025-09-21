@@ -500,26 +500,41 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     paddingHorizontal: 4,
   },
+  // Card Styles
   card: {
     backgroundColor: '#FFFFFF',
-    borderRadius: 12,
-    padding: 16,
-    marginBottom: 16,
+    borderRadius: 16,
+    padding: 12,
+    marginHorizontal: 8,
+    marginBottom: 10,
     elevation: 3,
     shadowColor: '#000000',
-    shadowOffset: { width: 0, height: 2 },
+    shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.1,
-    shadowRadius: 4,
+    shadowRadius: 3,
+  },
+  weatherCard: {
+    background: 'linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%)',
+    backgroundColor: '#4CAF50',
+  },
+  soilCard: {
+    backgroundColor: '#FFF8E1',
   },
   cardHeader: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 12,
+    marginBottom: 8,
   },
   cardTitle: {
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: 'bold',
     color: '#2E7D32',
+    marginLeft: 8,
+  },
+  weatherCardTitle: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
     marginLeft: 8,
   },
   weatherContent: {
