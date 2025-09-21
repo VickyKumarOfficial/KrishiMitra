@@ -201,6 +201,21 @@ export default function DashboardScreen() {
   const [currentScreen, setCurrentScreen] = useState('Dashboard');
   const [showProfileMenu, setShowProfileMenu] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState('hindi');
+  
+  // Get language-specific texts
+  const texts = getLanguageTexts(selectedLanguage);
+  
+  // Function to change language
+  const changeLanguage = (newLanguage: string) => {
+    setSelectedLanguage(newLanguage);
+    setShowProfileMenu(false);
+    Alert.alert(
+      selectedLanguage === 'hindi' ? 'भाषा बदली गई' : 'Language Changed', 
+      selectedLanguage === 'hindi' 
+        ? `भाषा ${newLanguage === 'hindi' ? 'हिंदी' : 'अंग्रेजी'} में बदल दी गई`
+        : `Language switched to ${newLanguage === 'hindi' ? 'Hindi' : 'English'}`
+    );
+  };
 
   const onRefresh = () => {
     setRefreshing(true);
