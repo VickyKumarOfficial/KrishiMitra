@@ -228,8 +228,8 @@ export default function DashboardScreen() {
 
   const renderAppHeader = () => (
     <View style={styles.appHeader}>
-      <Text style={styles.appName}>KrishiMitra</Text>
-      <Text style={styles.appSlogan}>Your personalized AI based crop recommendation</Text>
+      <Text style={styles.appName}>{texts.appName}</Text>
+      <Text style={styles.appSlogan}>{texts.appSlogan}</Text>
     </View>
   );
 
