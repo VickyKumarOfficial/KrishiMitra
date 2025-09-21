@@ -235,8 +235,10 @@ export default function DashboardScreen() {
         <Text style={styles.weatherCardTitle}>मौसम | Weather</Text>
       </View>
       <View style={styles.weatherContent}>
-        <Text style={styles.temperature}>{mockDashboardData.weather.temperature}°C</Text>
-        <Text style={styles.weatherCondition}>{mockDashboardData.weather.condition}</Text>
+        <View style={styles.mainWeather}>
+          <Text style={styles.temperature}>{mockDashboardData.weather.temperature}°C</Text>
+          <Text style={styles.weatherCondition}>{mockDashboardData.weather.condition}</Text>
+        </View>
         <View style={styles.weatherDetails}>
           <View style={styles.weatherDetailItem}>
             <Ionicons name="water" size={16} color="#FFFFFF" />
@@ -247,6 +249,23 @@ export default function DashboardScreen() {
             <Ionicons name="rainy" size={16} color="#FFFFFF" />
             <Text style={styles.weatherDetailLabel}>Rainfall</Text>
             <Text style={styles.weatherDetailValue}>{mockDashboardData.weather.rainfall}mm</Text>
+          </View>
+        </View>
+        
+        {/* 3-Day Forecast */}
+        <View style={styles.forecastContainer}>
+          <Text style={styles.forecastTitle}>3-Day Forecast</Text>
+          <View style={styles.forecastRow}>
+            {mockDashboardData.weather.forecast.map((day, index) => (
+              <View key={index} style={styles.forecastItem}>
+                <Text style={styles.forecastDay}>{day.day}</Text>
+                <Ionicons name={day.icon} size={20} color="#FFFFFF" />
+                <Text style={styles.forecastTemp}>{day.temp}°</Text>
+                {day.rain > 0 && (
+                  <Text style={styles.forecastRain}>{day.rain}mm</Text>
+                )}
+              </View>
+            ))}
           </View>
         </View>
       </View>
