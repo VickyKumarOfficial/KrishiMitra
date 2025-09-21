@@ -219,18 +219,15 @@ export default function DashboardScreen() {
   );
 
   const renderAlertsCard = () => (
-    <View style={styles.card}>
-      <View style={styles.cardHeader}>
-        <Ionicons name="warning" size={24} color="#FF9800" />
-        <Text style={styles.cardTitle}>अलर्ट | Alerts</Text>
-      </View>
+    <View style={styles.section}>
+      <Text style={styles.sectionTitle}>अलर्ट | Alerts</Text>
       {mockDashboardData.alerts.map((alert) => (
-        <View key={alert.id} style={styles.alertItem}>
-          <Text style={styles.alertSeverity}>{alert.severity}</Text>
-          <View style={styles.alertContent}>
-            <Text style={styles.alertTitle}>{alert.title}</Text>
-            <Text style={styles.alertMessage}>{alert.message}</Text>
-          </View>
+        <View key={alert.id} style={[styles.alertCard, {
+          backgroundColor: alert.bgColor,
+          borderLeftColor: alert.borderColor,
+        }]}>
+          <Text style={[styles.alertTitle, {color: alert.borderColor}]}>{alert.title}</Text>
+          <Text style={styles.alertMessage}>{alert.message}</Text>
         </View>
       ))}
     </View>
