@@ -305,24 +305,35 @@ export default function DashboardScreen() {
   const renderGrowNowSection = () => (
     <View style={styles.section}>
       <Text style={styles.sectionTitle}>अभी क्या उगाएं? | What to grow now?</Text>
-      <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.growNowScroll}>
+      <View style={styles.growNowContainer}>
         {mockDashboardData.growNow.map((crop) => (
-          <TouchableOpacity key={crop.id} style={[styles.growCard, {backgroundColor: crop.bgColor}]}>
-            <Text style={styles.cropEmoji}>{crop.image}</Text>
-            <Text style={styles.cropName}>{crop.name}</Text>
-            <Text style={styles.cropHindiName}>{crop.hindiName}</Text>
-            <View style={styles.cropDetails}>
-              <Text style={styles.cropSeason}>{crop.season}</Text>
-              <Text style={styles.cropDays}>{crop.daysToHarvest} days</Text>
+          <TouchableOpacity 
+            key={crop.id} 
+            style={[styles.growCardFlex, {backgroundColor: crop.bgColor}]}
+            onPress={() => Alert.alert(`${crop.name} Details`, `Season: ${crop.season}\nHarvest in: ${crop.daysToHarvest} days\nProfitability: ${crop.profitability}`)}
+          >
+            <View style={styles.cropImageContainer}>
+              <Text style={styles.cropEmoji}>{crop.image}</Text>
+            </View>
+            <View style={styles.cropInfoContainer}>
+              <Text style={styles.cropName}>{crop.name}</Text>
+              <Text style={styles.cropHindiName}>{crop.hindiName}</Text>
+              <View style={styles.cropMetrics}>
+                <Text style={styles.cropSeason}>{crop.season}</Text>
+                <Text style={styles.cropDays}>{crop.daysToHarvest} days</Text>
+              </View>
+            </View>
+            <View style={styles.cropProfitContainer}>
               <View style={[styles.profitabilityBadge, {
                 backgroundColor: crop.profitability === 'High' ? '#4CAF50' : '#FF9800'
               }]}>
-                <Text style={styles.profitabilityText}>{crop.profitability} Profit</Text>
+                <Text style={styles.profitabilityText}>{crop.profitability}</Text>
               </View>
+              <Ionicons name="chevron-forward" size={16} color="#999999" />
             </View>
           </TouchableOpacity>
         ))}
-      </ScrollView>
+      </View>
     </View>
   );
 
